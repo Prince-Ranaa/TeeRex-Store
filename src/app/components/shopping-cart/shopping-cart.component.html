@@ -1,0 +1,41 @@
+<h2>Shopping Cart</h2>
+
+<div *ngIf="this.cart.cartItem.length != 0; else elseBlock" class="container">
+    <table>
+        <tr *ngFor="let item of this.cart.cartItem; index as i">
+            <td>
+                <div class="cart_image">
+                    <img src="{{item.imageURL}}" alt="">
+                </div>
+            </td>
+
+            <td class="bold">
+                {{item.gender}}'s <br> {{item.name}} <br> Rs.{{item.price}}
+            </td>
+
+            <td>
+                <button class="inc_dec" (click)="decreaseQuantity(item)">&minus;</button>
+                <span class="bold">Qty: {{item.quantityAdded}}</span>
+                <button class="inc_dec" (click)="increaseQuantity(item)">&plus;</button>
+            </td>
+
+            <td><button class="delete_button bold" (click)="deleteItem(i)">Delete</button></td>
+
+        </tr>
+    </table>
+
+    <div class="total">
+        <p class="bold">Total Amount : {{totalAmount()}}</p>
+    </div>
+
+</div>
+
+
+
+<ng-template #elseBlock>
+    <div class="empty_cart">
+        <p>Shopping Cart is empty</p>
+        <a routerLink=""> Shop Now</a>
+    </div>
+
+</ng-template>

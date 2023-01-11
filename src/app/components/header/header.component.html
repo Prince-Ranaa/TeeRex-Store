@@ -1,0 +1,12 @@
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="">TeeRex Store</a>
+
+        <div class="right_nav">
+            <a routerLink="" class="products">Products</a>
+            <a routerLink="cart" class="cart"><i class="bi bi-cart3"></i>
+                <div class="myBadge"> {{this.cart.cartItem.length}}</div>
+            </a>
+        </div>
+    </div>
+</nav>

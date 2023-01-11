@@ -1,0 +1,123 @@
+.bold {
+    font-weight: 600;
+}
+
+h2 {
+    padding: 60px 0px 0px 30px;
+}
+
+.empty_cart {
+    text-align: center;
+    margin-top: 200px;
+    height: 70vh;
+}
+
+table {
+    width: 70%;
+    border-bottom: 1px solid black;
+    margin: 50px 50px 0 50px;
+    text-align: center;
+
+    tr {
+        padding-bottom: 10px;
+    }
+
+    td {
+        padding: 0;
+        padding-bottom: 20px !important;
+
+
+
+        select {
+            background-color: #f1f1f1;
+            padding: 5px 16px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+
+        .inc_dec {
+            padding: 5px 10px;
+            border: 1px solid gray;
+        }
+
+        span {
+            margin: 0 5px;
+        }
+
+        .delete_button {
+            padding: 5px 16px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+
+        .delete_button:hover {
+            background-color: #ff0000;
+            color: white;
+            transition: .2s;
+            border: 1px solid red;
+        }
+
+        .cart_image {
+            width: 80px;
+            border: 2px solid black;
+            margin: 0 auto;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+.total {
+    padding-left: 60%;
+}
+
+
+@media screen and (max-width:1024px) {
+    .total {
+        padding-left: 55%;
+    }
+}
+
+
+@media screen and (max-width:775px) {
+    table {
+        width: 100%;
+        border-bottom: 1px solid black;
+        margin: 50px 50px 0 0px;
+        text-align: center;
+    }
+
+    .total {
+        padding-left: 55%;
+    }
+}
+
+
+@media screen and (max-width:450px) {
+
+    .cart_image {
+        width: 50px !important;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+        }
+    }
+
+
+    table {
+        width: 100%;
+        border-bottom: 1px solid black;
+        margin: 50px 50px 0 0px;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .total {
+        padding-left: 55%;
+        font-size: 14px;
+    }
+}

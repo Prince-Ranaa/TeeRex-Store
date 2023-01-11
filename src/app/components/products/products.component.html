@@ -1,0 +1,106 @@
+<div class="search">
+    <input type="text" placeholder="Search for products" [(ngModel)]="searchedItem">
+    <button (click)="searchItem()"><i class="bi bi-search"></i></button>
+    <button class="filter_button" (click)="filterButton()"><i class="bi bi-funnel"></i></button>
+</div>
+
+
+
+<div class="products">
+    <div class="filter" #filter>
+        <div class="filter_group">
+            <p class="bold">Color</p>
+            <div>
+                <input type="checkbox" value="Red" (change)="colorFilter($event)">
+                <label for="red">Red</label>
+            </div>
+
+            <div>
+                <input type="checkbox" value="Blue" (change)="colorFilter($event)">
+                <label for="blue">Blue</label>
+            </div>
+
+            <div>
+                <input type="checkbox" value="Green" (change)="colorFilter($event)">
+                <label for="green">Green</label>
+            </div>
+        </div>
+
+
+        <div class="filter_group">
+            <p class="bold">Gender</p>
+
+            <div>
+                <input type="checkbox" value="Men" (change)="genderFilter($event)">
+                <label for="">Men</label>
+            </div>
+
+            <div>
+                <input type="checkbox" value="Women" (change)="genderFilter($event)">
+                <label for="">Women</label>
+            </div>
+        </div>
+
+
+        <div class="filter_group">
+            <p class="bold">Price</p>
+
+            <div>
+                <input type="checkbox" value="0 250" (click)="priceFilter($event)">
+                <label for="">0 - 250</label>
+            </div>
+
+            <div>
+                <input type="checkbox" value="251 450" (click)="priceFilter($event)">
+                <label for="">251 - 450</label>
+            </div>
+
+            <div>
+                <input type="checkbox" value="450 more" (click)="priceFilter($event)">
+                <label for="">451 and more</label>
+            </div>
+        </div>
+
+
+        <div class="filter_group">
+            <p class="bold">Type</p>
+
+            <div>
+                <input type="checkbox" value="Polo" (change)="typeFilter($event)">
+                <label for="">Polo</label>
+            </div>
+
+            <div>
+                <input type="checkbox" value="Hoodie" (change)="typeFilter($event)">
+                <label for="">Hoodie</label>
+            </div>
+
+            <div>
+                <input type="checkbox" value="Basic" (change)="typeFilter($event)">
+                <label for="">Basic</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="products_container">
+        <div class="products_grid">
+            <div class="product_card"
+                *ngFor="let product of products | search:search:'name' | color:color | gender:gender | price:price | type:type">
+                <div class="product">
+                    <div class="type">
+                        <p class="bold">{{product.name}}</p>
+                        <p class="gender">{{product.gender}}'s</p>
+                    </div>
+                    <div class="product_image_container">
+                        <img src="{{product.imageURL}}" alt="">
+                    </div>
+                </div>
+
+                <div class="price">
+                    <p class="bold">Rs. {{product.price}}</p>
+                    <button (click)="addToCart(product)">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
